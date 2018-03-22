@@ -44,6 +44,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact')}}">contact</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('about')}}">About</a>
+                            </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -63,6 +66,9 @@
                                     </form>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact')}}">contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('about')}}">about</a>
                             </li>
                                 </div>
                             </li>

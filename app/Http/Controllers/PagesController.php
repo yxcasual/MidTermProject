@@ -19,4 +19,8 @@ class PagesController extends Controller
         return view('pages.contactformresponse')->with(compact('name'));
     }
 
+    function about(){
+        return view('pages.about');
+    }
+
 }
