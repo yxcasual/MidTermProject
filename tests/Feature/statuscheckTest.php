@@ -33,4 +33,11 @@ class statuscheckTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testContactStatusCheck()
+    {
+        $response = $this->get('/contact');
+
+        $response->assertStatus(200);
+    }
 }
