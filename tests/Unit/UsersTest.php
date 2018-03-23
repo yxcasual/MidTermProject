@@ -18,9 +18,12 @@ class UsersTest extends TestCase
     {
         $user= new User();
         $user->name='Yohann Chakola';
-        $user->email='yc@gmail.com';
-        $user->password='abc123';
+        $user->email=str_random(6).'@gmail.com';
+        $user->password=bcrypt(str_random(8));
+
 
         $this->assertTrue($user->save());
     }
+
+
 }
