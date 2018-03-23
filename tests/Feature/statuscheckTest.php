@@ -26,4 +26,11 @@ class statuscheckTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testAboutStatusCheck()
+    {
+        $response = $this->get('/about');
+
+        $response->assertStatus(200);
+    }
 }
