@@ -19,4 +19,11 @@ class statuscheckTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testLoginStatusCheck()
+    {
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
+    }
 }
