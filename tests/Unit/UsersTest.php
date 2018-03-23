@@ -14,6 +14,14 @@ class UsersTest extends TestCase
      *
      * @return void
      */
+    public function testCountUser()
+    {
+        $user= User::All();
+        $userCount = $user->count();
+
+        $this->assertEquals($userCount,50);
+    }
+
     public function testInsertUser()
     {
         $user= new User();
