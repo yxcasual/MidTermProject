@@ -32,4 +32,10 @@ class CarsTest extends TestCase
 
         $this->assertTrue($car->save());
     }
+
+    public function testDeleteCar()
+    {
+        $car= car::find(2);
+        $this->assertTrue($car->delete());
+    }
 }
