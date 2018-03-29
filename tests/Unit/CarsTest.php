@@ -72,4 +72,11 @@ class CarsTest extends TestCase
             $this->assertEquals('Success',$flag);
 
     }
+
+    public function testCarMakeString()
+    {
+        $car= car::inRandomOrder()->first();
+        $model = $car->model;
+        $this->assertInternalType(IsType::TYPE_STRING,$model);
+    }
 }
