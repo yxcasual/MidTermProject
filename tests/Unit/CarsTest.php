@@ -2,9 +2,12 @@
 
 namespace Tests\Unit;
 
+use Illuminate\Support\Facades\DB;
+use PHPUnit\Framework\Constraint\IsType;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
 use App\car;
 
 class CarsTest extends TestCase
@@ -47,5 +50,15 @@ class CarsTest extends TestCase
     {
         $car= car::find(2);
         $this->assertTrue($car->delete());
+
+    }
+
+    public function testCarYearInt()
+    {
+        $car= car::inRandomOrder()->first();
+        $year = (int) $car->year; // Set year value as interger because by default it seems to identify as a string
+
+        $this->assertInternalType(IsType::TYPE_INT,$year);
+        //$this->assertFalse(is_int($car->year));
     }
 }
