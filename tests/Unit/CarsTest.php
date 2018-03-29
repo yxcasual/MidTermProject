@@ -61,4 +61,15 @@ class CarsTest extends TestCase
         $this->assertInternalType(IsType::TYPE_INT,$year);
         //$this->assertFalse(is_int($car->year));
     }
+    public function testCarMake()
+    {
+        $car= car::inRandomOrder()->first();
+        if ($car->make=='Ford' || $car->make=='Honda' || $car->make=='Toyota'){
+        $flag = 'Success';}
+        else{
+             $flag = 'Failure';
+        }
+            $this->assertEquals('Success',$flag);
+
+    }
 }
