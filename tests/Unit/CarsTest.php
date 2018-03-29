@@ -18,13 +18,7 @@ class CarsTest extends TestCase
      * @return void
      */
 
-    public function testCountCar()
-    {
-        $car= car::All();
-        $carCount = $car->count();
 
-        $this->assertEquals($carCount,50);
-    }
 
 
     public function testInsertCar()
@@ -48,9 +42,17 @@ class CarsTest extends TestCase
 
     public function testDeleteCar()
     {
-        $car= car::find(2);
+        $car= car::inRandomOrder()->first();
         $this->assertTrue($car->delete());
 
+    }
+
+    public function testCountCar()
+    {
+        $car= car::All();
+        $carCount = $car->count();
+
+        $this->assertEquals($carCount,50);
     }
 
     public function testCarYearInt()
